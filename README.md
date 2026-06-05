@@ -1,61 +1,144 @@
+#  Car Price Prediction Using Machine Learning
 
-# Car Price Prediction
+##  Project Overview
 
-## Project Overview
-This project predicts the selling price of a car using Machine Learning techniques. The model analyzes various car features such as year, fuel type, transmission, kilometers driven, and ownership details to estimate the car price.
+This project predicts car prices based on vehicle specifications such as brand, model, year, engine size, mileage, fuel type, and transmission.
 
-## Objective
-To build a machine learning model that can accurately predict car prices based on historical car data.
+The objective is to build a regression model that can estimate the price of a car using historical vehicle data.
 
-## Technologies Used
+---
+
+##  Dataset
+
+Source:
+https://www.kaggle.com/datasets/amjadzhour/car-price-prediction
+
+Dataset contains 1000 records with the following features:
+
+- Make
+- Model
+- Year
+- Engine Size
+- Mileage
+- Fuel Type
+- Transmission
+- Price (Target Variable)
+
+---
+
+##  Technologies Used
+
 - Python
 - Pandas
 - NumPy
-- Matplotlib
-- Seaborn
 - Scikit-Learn
-- Jupyter Notebook
+- Jupyter Notebook / Kaggle Notebook
 
-## Project Workflow
+---
 
-### 1. Data Collection
-Collected car dataset containing vehicle details and selling prices.
+##  Project Workflow
 
-### 2. Data Cleaning
-- Checked missing values
-- Removed duplicates
-- Handled categorical variables
+### 1. Data Loading
+Loaded dataset using Pandas.
 
-### 3. Exploratory Data Analysis (EDA)
-- Correlation analysis
-- Feature distribution
-- Data visualization
+### 2. Data Inspection
+- Checked dataset shape
+- Checked data types
+- Verified missing values
 
-### 4. Feature Engineering
-- Encoded categorical variables
-- Selected important features
+### 3. Data Preprocessing
+
+#### Categorical Features
+Applied One-Hot Encoding on:
+
+- Make
+- Model
+- Fuel Type
+- Transmission
+
+#### Numerical Features
+Applied Standard Scaling on:
+
+- Year
+- Engine Size
+- Mileage
+
+### 4. Train-Test Split
+
+- Training Data: 80%
+- Testing Data: 20%
 
 ### 5. Model Building
-Implemented machine learning models:
-- Linear Regression
-- Random Forest Regressor
+
+Implemented and compared:
+
+1. Linear Regression
+2. Ridge Regression
+3. Lasso Regression
 
 ### 6. Model Evaluation
-Evaluation metrics used:
+
+Evaluation Metrics:
+
+- MAE (Mean Absolute Error)
+- RMSE (Root Mean Squared Error)
 - R² Score
-- Mean Absolute Error (MAE)
-- Mean Squared Error (MSE)
 
-## Results
-The model successfully predicts car prices with good accuracy and can assist buyers and sellers in estimating vehicle value.
+---
 
-## Future Improvements
+##  Results
+
+| Model | R² Score | MAE |
+|---------|---------|---------|
+| Ridge Regression | 0.8172 | 1810.19 |
+| Lasso Regression | 0.8171 | 1810.54 |
+| Linear Regression | 0.8171 | 1810.55 |
+
+### Best Model
+
+ Ridge Regression achieved the highest R² Score:
+
+- R² Score = 0.8172
+- MAE = 1810.19
+
+---
+
+##  Prediction System
+
+The project also includes a user input prediction system where users can enter:
+
+- Make
+- Model
+- Year
+- Engine Size
+- Mileage
+- Fuel Type
+- Transmission
+
+and receive the predicted car price instantly.
+
+Example:
+
+Predicted Price: 30107.65
+
+---
+
+##  Future Improvements
+
 - Hyperparameter tuning
-- Deployment using Flask or Streamlit
-- Larger dataset integration
+- Random Forest Regression
+- XGBoost Regressor
+- Streamlit Web App Deployment
+- Feature Importance Analysis
 
-## Author
-Priya Rathod
+---
 
+##  Author
 
-Kaggle: https://www.kaggle.com/priyarathod789512
+**Priya Rathod**
+
+Kaggle:
+https://www.kaggle.com/priyarathod789512
+
+GitHub:
+https://github.com/your-github-username
